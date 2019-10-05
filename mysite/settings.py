@@ -26,7 +26,7 @@ SECRET_KEY = '$co8y40t@h$%am^ris@ho3pd4pxzq%b6$0j&w7(1pj@ff!#jwn'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -119,5 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 #STATIC_ROOT = os.path.join(os.path.dirname(__file__), '..', 'static').replace('\\', '/')
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
