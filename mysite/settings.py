@@ -121,4 +121,4 @@ USE_TZ = True
 #STATIC_ROOT = os.path.join(os.path.dirname(__file__), '..', 'static').replace('\\', '/')
 STATIC_URL = '/static/'
 #STATIC_URL = '/static/'
-STATIC_ROOT = "/var/www/jlepalab.pythonanywhere.com/static"
+STATIC_ROOT = "/var/www/jlepalab.pythonanywhere.com/blog/static"
