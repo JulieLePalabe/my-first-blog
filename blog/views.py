@@ -2,11 +2,24 @@ from .forms import PostForm
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
+from .models import Article
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 
 
 # Create your views here.
+def article_new(request):
+    if request.method == "POST":
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.save()
+            return redirect('article_new', pk=article.pk)
+    else:
+        form = PostForm()
+    return render(request, 'blog/article_new.html', {'form': form})
+
+
 def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'blog/post_list.html', {'posts':posts})
