@@ -19,6 +19,9 @@ class Post(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
+    img_article=models.ImageField(upload_to='img_article/', default='img_article/imgdef.jpg')
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
     
     def publish(self):
         self.published_date = timezone.now()
